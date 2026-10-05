@@ -4,7 +4,7 @@ draft = false
 title = 'About'
 +++
 
-We are Jadoo. We are Evariste. We do math
+We are Evariste. We do math
 
 $x^2 +y^2 = z^2$
 
