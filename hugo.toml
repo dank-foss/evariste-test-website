@@ -1,3 +1,37 @@
 baseURL = 'https://example.org/'
 locale = 'en-us'
-title = 'My New Hugo Project'
+title = 'Évariste@IIITD'
+theme = "digio-theme"
+
+[menus]
+  [[menus.main]]
+    name = 'Hom(É)'
+    pageRef = '/'
+    weight = 1
+    [menus.main.params]
+      image = '/sqrt1.svg'
+
+  [[menus.main]]
+    name = 'About'
+    pageRef = '/about'
+    weight = 2
+
+  [[menus.main]]
+    name = 'Blog'
+    pageRef = '/blogs'
+    weight = 3
+
+  [[menus.main]]
+    name = 'Members'
+    pageRef = '/members'
+    weight = 3
+
+  [[menus.main]]
+    name = 'Pwnhub'
+    pageRef = '/pwnhub'
+    weight = 3
+
+  [[menus.main]]
+    name = 'Past Papers'
+    pageRef = '/past-papers'
+    weight = 4    
