@@ -1,8 +1,10 @@
-+++
-date = '2026-10-02T21:00:22+05:30'
-draft = false
-title = 'About'
-+++
+---
+date: '2026-10-02T21:00:22+05:30'
+draft: false
+math: true
+title: About
+toc: false
+---
 
 We are Evariste. We do math
 

@@ -9,6 +9,6 @@
       pkgs = nixpkgs-unstable.legacyPackages.${system};
     in {
       devShells.${system}.default =
-        pkgs.mkShell { packages = with pkgs; [ hugo tailwindcss_4 ]; };
+        pkgs.mkShell { packages = with pkgs; [ hugo tailwindcss_4 dart-sass]; };
     };
 }

@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaTeX for Noobs</title>
+    <meta charset="utf-8"><meta name="description" content="It is a markup language, like HTML. We define how and where text should appear and $\LaTeX$ does the rest.
+Every academic/research paper you see is written in $\LaTeX$, if it&rsquo;s not, you should stay away from it. It&rsquo;s used to create good looking documents with minimal effort.
+">
+    <meta name="author" content="ÉvaristeIIITDihh">
+    <link rel="canonical" href="http://localhost:1313/blogs/latex-for-noobs/">
+
+    
+
+
+    <meta property="og:url" content="http://localhost:1313/blogs/latex-for-noobs/">
+	<meta property="og:site_name" content="ÉvaristeIIITDihh">
+	<meta property="og:title" content="LaTeX for Noobs">
+	<meta property="og:description" content="It is a markup language, like HTML. We define how and where text should appear and $\LaTeX$ does the rest.
+Every academic/research paper you see is written in $\LaTeX$, if it’s not, you should stay away from it. It’s used to create good looking documents with minimal effort.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="blogs">
+		<meta property="article:published_time" content="2026-11-22T18:31:52+05:30">
+		<meta property="article:modified_time" content="2026-11-22T18:31:52+05:30">
+		<meta property="article:tag" content="Latex">
+		<meta property="article:tag" content="4noobs">
+
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="LaTeX for Noobs">
+	<meta name="twitter:description" content="It is a markup language, like HTML. We define how and where text should appear and $\LaTeX$ does the rest.
+Every academic/research paper you see is written in $\LaTeX$, if it’s not, you should stay away from it. It’s used to create good looking documents with minimal effort.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blog",
+      "item": "http://localhost:1313/blogs/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "LaTeX for Noobs",
+      "item": "http://localhost:1313/blogs/latex-for-noobs/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "LaTeX for Noobs",
+  "name": "LaTeX for Noobs",
+  "description": "It is a markup language, like HTML. We define how and where text should appear and $\\LaTeX$ does the rest.\nEvery academic/research paper you see is written in $\\LaTeX$, if it\u0026rsquo;s not, you should stay away from it. It\u0026rsquo;s used to create good looking documents with minimal effort.\n",
+  "keywords": [
+    "latex", "4noobs"
+  ],
+  "articleBody": "It is a markup language, like HTML. We define how and where text should appear and $\\LaTeX$ does the rest.\nEvery academic/research paper you see is written in $\\LaTeX$, if it’s not, you should stay away from it. It’s used to create good looking documents with minimal effort.\nIntro to $\\LaTeX$ With a doc in markdown for the memes.\nWhat is it? It is a markup language, like HTML, we use\nhtml Copy \u003ch1\u003eHeading\u003c/h1\u003e To define how heading should appear, we define how and where text should appear and $\\LaTeX$ does the rest.\nEvery academic/research paper you see is written in $\\LaTeX$, if it’s not, you should stay away from it. It’s used to create good looking documents with minimal effort. For example to get, $$\\int_0^\\pi\\sin(x)dx,$$ we just need to type\ntex Copy \\[\\int_0^\\pi\\sin(x)dx\\] (Markdown with $\\KaTeX$ can also render $\\LaTeX$, which is why you can see the nice equations here as well. Note that this does not make $\\LaTeX$ obsolete, as markdown is shit.)\nBut to quickly mention, for inline math, wrap the equation in $, like $x=2$, which generates $x=2$ or $$, like $$x=2$$ to get $$x=2.$$\nGetting started with it You have two options.\nUse an online IDE, such as Overleaf Download and run it locally On Overleaf Visit Overleaf and start a new blank project. We can directly start writing on the main.tex file, and see it’s final output on the left PDF after compilation.\nLocally To run $\\LaTeX$ locally, we need to download it. The simplest way is to use Tex Live. Follow the install instructions as per your operating system. (Note that the entire $\\TeX$ package costs about 9 gigs, you can choose a smaller subset.)\nAfter installation, you could get any $\\TeX$ editor, visit Wikipedia’s list of TeX editors to choose one, I’d recommend TeXstudio.\nIf you’d like to us Visual Studio Code (which I prefer), get the LaTeX Workshop extension. You could also configure neovim with the VimTeX extension if you like.\nNow, create any file ending with .tex, and use the pdflatex executable/binary to compile this $\\TeX$ file into a PDF. The final command would be\nsh Copy pdflatex main.tex Assuming you named your file main.tex. Note that every editor does this itself, so you need not worry about these commands.\n$\\LaTeX$ Let’s finally talk about it. The minimum you need to write to get started with any document is\ntex Copy \\documentclass[options]{article} \\begin{document} \\end{document} Where the documentclass defines how our document looks like. article is the most common, but you could also have book, report, and more (even custom stuff). The options defines some parameters such as font size (default is 10pt), paper size (letterpaper/a4paper), landscape and more.\nThe next most important thing is setting up your document title, authors, and date.\ntex Copy \\documentclass{article} \\title{Intro to \\LaTeX} \\author{Taraash} \\date{\\today} %which is default, so could be omitted. \\begin{document} \\maketitle Welcome to some \\LaTeX-ed! \\end{document} Use the maketitle command inside the document environment, and define your title, author, and date as shown above. Use the percent symbol (%) for comments.\nDocument structure We have \\section{}, \\subsection{} and \\subsubsection{} to organize. Note that there are also starred version of these commands, like \\section*{}, these do not number whatever section you have. \\\\ is the line break. \\newpage moves everything below to a new page.\nUse the \\tableofcontents to… get a table of contents. Starred ((sub)sub)sections are hidden.\nText Command Output Effect \\textbf{text} $\\textbf{text}$ Boldface \\textit{text} $\\textit{text}$ Italics \\textrm{text} $\\textrm{text}$ Roman family \\texttt{text} $\\texttt{text}$ Typewriter \\emph{text} $\\emph{text}$ Emphasize \\textit{text \\emph{emph}} $\\textit{text \\emph{emph}}$ Changes depending where it is Math mode Probably the most useful thing $\\TeX$ is known for, its ability to handle extremely complex mathematical equations beautifully. Consider for example $$\\int_0^{\\int_0^1e^{-x^2}}e^{x^2}dx.$$ You would have incredible trouble getting something like this any other package, but in here, we just need \\int_0^{\\int_0^1e^{-x^2}}e^{x^2}dx to do it!\nI’ve already described inline (use $math$ or \\(math\\)) and display math mode (use \\[math\\] or the equation environment). By an environment we mean\ntex Copy \\begin{equation} \\end{equation} Hence document is also an environment, stuff inside which get’s displayed in the compiled PDF. (Much like the body tag in HTML, everything before the \\begin{document}, the preamble is the head tag.)\nSubscripts: a_1 = $a_1$, a_12 = $a_12$, a_{12} = $a_{12}$ Superscripts: x^2 = $x^2$, x^2y = $x^2y$, x^{2y} = $x^{2y}$ Fractions: \\frac{x}{y} = $\\frac{x}{y}$ Square roots: \\sqrt[n]{x} = $\\sqrt[n]{x}$ Sum: \\sum_{k=0}^{\\infty}a_k = $\\sum_{k=0}^{\\infty}a_k$ Product: \\prod_{k=0}^{\\infty}a_k = $\\prod_{k=0}^{\\infty}a_k$ Integral: \\int a_k = $\\int a_k$ Some commonly used symbols\nSymbol Command $\\leq$ \\leq $\\neq$ \\neq $\\times$ \\times $\\wedge$ \\wedge $\\in$ \\in $\\notin$ \\notin $\\forall$ \\forall $\\exists$ \\exists $\\subset$ \\subset $\\rightarrow$ \\rightarrow $\\pm$ \\pm $\\cdots$ \\cdots You can find tables for these online. If you’re using the LaTeX Workshop extension in VS Code, find the Symbols panel it provides. Overleaf premium also has one, but you could just search up what you need.\nMore environments Ordered lists\ntex Copy \\begin{enumerate} \\item First \\item Second \\end{enumerate} Unordered lists\ntex Copy \\begin{itemize} \\item Banana \\item Monkey \\end{itemize} Description\ntex Copy \\begin{description} \\iten[Banana] Eaten by monkeys \\item[Monkeys] Eat banana \\item[Humans] Evolved from monkeys, similar to bananas ($\\sim 99\\%$ DNA match?) \\end{description} Table\ntex Copy \\begin{tabular}{|l|c|r|} \\hline left_aligned \u0026 center_aligned \u0026 right_aligned \\\\ second \u0026 row \u0026 data \\\\ \\hline %horizontal line \\end{tabular} Align\ntex Copy \\begin{align*} x + 2 \u0026= 7 \\\\ x \u0026= 5 \\end{align*} $$ \\begin{align*} x + 2 \u0026= 7 \\ x \u0026= 5 \\end{align*} $$\nThe \u0026 are aligned vertically, here, keeping them before the equals to sign ensures the equals to sign are aligned vertically. Here, starring the environments gets rid of the numbering done by the unstarred environment.\n$$ \\begin{align} x + 2 \u0026= 7 \\ x \u0026= 5 \\end{align} $$\nQuote\ntex Copy \\begin{quote} We are made of star-stuff. \\hfill \\textit{---Carl Sagan} \\end{quote} To get quotes, you need `hello’ ($\\text{hello'}$) and \\`hello’’ for double ($\\text{``hello\"}$). DO NOT USE \"baaad\" ($\\text{“baaad”}$)!\nSpacing hspace{10pt}: Adds a horizontal space of 10pt vspace{10pt}: Vertical space of 10pt vfill: Adds space to vertically fill the page hfill: Adds space to horizontally fill the page newpage: Creates a new page \\\\[10pt]: Adds a new line and a vertical space of 10pt Links Overleaf’s $\\LaTeX$ in 30 minutes The $\\TeX$ for my notes for game development with Unreal Engine Everything I’ve ever made for Évariste (will be continuously updated, make sure to star this repo) I’d be very happy if, because of this session you were able to use $\\LaTeX$, start a discussion on our WhatsApp, Telegram, or credit/mention/share whatever you made! Thank you.\n",
+  "wordCount" : "1093",
+  "inLanguage": "en",
+  "datePublished": "2026-11-22T18:31:52+05:30",
+  "dateModified": "2026-11-22T18:31:52+05:30",
+  "author":{
+    "@type": "Person",
+    "name": "Tcent"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/blogs/latex-for-noobs/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ÉvaristeIIITDihh",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/sqrt.svg"
+    }
+  }
+}
+</script>
+    <link rel="icon" href="/sqrt.svg" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/sqrt.svg">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"
+    integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"
+    integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js"
+    integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
+    crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            
+            
+            delimiters: [
+                { left: '$$', right: '$$', display: true },
+                { left: '$', right: '$', display: false },
+                { left: '\\(', right: '\\)', display: false },
+                { left: '\\[', right: '\\]', display: true },
+                { left: "\\begin{equation}", right: "\\end{equation}", display: true },
+                { left: "\\begin{align}", right: "\\end{align}", display: true },
+                { left: "\\begin{alignat}", right: "\\end{alignat}", display: true },
+                { left: "\\begin{gather}", right: "\\end{gather}", display: true },
+                { left: "\\begin{CD}", right: "\\end{CD}", display: true }
+            ],
+            
+            throwOnError: false,
+            trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+            macros: {
+                "\\eqref": "\\href{###1}{(\\text{#1})}",
+                "\\ref": "\\href{###1}{\\text{#1}}",
+                "\\label": "\\htmlId{#1}{}"
+            }
+        });
+    });
+</script>
+
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" />
+
+    
+    
+    <link rel="stylesheet" href="/css/main.min.fdab5c22e7d9ea278f9db48a5435dc983ffff285438f6571e2f70abe4c437317.css" integrity="sha256-/atcIufZ6iePnbSKVDXcmD//8oVDj2Vx4vcKvkxDcxc=" crossorigin="anonymous" media="screen" />
+
+    <script>(()=>{var t="data-dark-mode",n=t||"data-dark-mode",s=window.matchMedia?.("(prefers-color-scheme: dark)").matches??!1,e=null;try{e=window.localStorage.getItem("theme")}catch{}e==="dark"||e===null&&s?(document.documentElement.setAttribute(n,""),document.documentElement.style.colorScheme="dark"):document.documentElement.style.colorScheme="light"})()</script>
+    </head>
+<body id="top">
+      <main class="wrapper"><nav class="navigation">
+    <section class="container">
+        <a class="navigation-brand" href="/">
+            Hom(É)
+        </a>
+        
+        <button class="menu-button float-right" id="menu-toggle" type="button"
+            aria-label="Toggle navigation menu" aria-controls="navigation-list" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="navigation-list" id="navigation-list">
+            
+            
+            <li class="navigation-item navigation-menu">
+                <a class="navigation-link" href="/blogs">blog</a>
+            </li>
+            
+            <li class="navigation-item navigation-menu">
+                <a class="navigation-link" href="/members">members</a>
+            </li>
+            
+            <li class="navigation-item navigation-menu">
+                <a class="navigation-link" href="/past-papers">past-papers</a>
+            </li>
+            
+            <li class="navigation-item navigation-menu">
+                <a class="navigation-link" href="/about">about</a>
+            </li>
+            
+            
+
+            <li class="navigation-item menu-separator">
+                <span>|</span>
+            </li>
+
+            
+            
+            <li class="navigation-item navigation-social">
+                <a class="navigation-link" href="https://github.com/username"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+            </li>
+            
+            
+
+            <li class="navigation-item navigation-dark">
+                <button id="mode" type="button" aria-label="Toggle light or dark theme" aria-pressed="false">
+                    <span class="toggle-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+                    <span class="toggle-light"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+                </button>
+            </li>
+
+            
+        </ul>
+        
+    </section>
+</nav>
+<div id="content">
+<article class="blog-single">
+  <header class="blog-title">
+    <h1>LaTeX for Noobs</h1>
+  </header>
+
+  <p class="blog-meta">
+  <small>
+    November 22, 2026&nbsp;· 1093 words&nbsp;· 6 min</small>
+
+  <small>
+      
+      ·
+      
+      
+      <a href="http://localhost:1313/tags/latex/">Latex</a>
+      
+      <a href="http://localhost:1313/tags/4noobs/">4noobs</a>
+      
+    </small>
+  
+</p>
+
+
+  <div class="article-layout has-toc">
+  
+  <aside class="blog-toc" aria-label="Table of Contents">
+    
+<nav class="toc-container" aria-label="Table of Contents">
+    <details open>
+        <summary><strong>Table of Contents</strong></summary>
+        <div class="toc-content">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-it">What is it?</a></li>
+    <li><a href="#getting-started-with-it">Getting started with it</a>
+      <ul>
+        <li><a href="#on-overleaf">On Overleaf</a></li>
+        <li><a href="#locally">Locally</a></li>
+      </ul>
+    </li>
+    <li><a href="#latex">$\LaTeX$</a>
+      <ul>
+        <li><a href="#document-structure">Document structure</a></li>
+        <li><a href="#text">Text</a></li>
+        <li><a href="#math-mode">Math mode</a></li>
+        <li><a href="#more-environments">More environments</a></li>
+        <li><a href="#spacing">Spacing</a></li>
+      </ul>
+    </li>
+    <li><a href="#links">Links</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</nav>
+
+
+  </aside>
+  
+
+  <section class="blog-content" data-enable-image-zoom="true"><p>It is a <em>markup</em> language, like HTML.
+We define how and where text should appear and <code>$\LaTeX$</code> does the rest.</p>
+<p>Every academic/research paper you see is written in <code>$\LaTeX$</code>, if it&rsquo;s not, you should stay away from it. It&rsquo;s used to create good looking documents with minimal effort.</p>
+<h1 id="intro-to-latex">Intro to $\LaTeX$</h1>
+<p>With a doc in <code>markdown</code> for the memes.</p>
+<p><img src="images/WhatsApp%20Image%202025-10-04%20at%2017.06.47_79924242.jpg" alt="latex\neq\LaTeX" loading="lazy" decoding="async">
+</p>
+<h2 id="what-is-it">What is it?</h2>
+<p>It is a <em>markup</em> language, like HTML, we use</p>
+<div class="code-block" data-language="html">
+  <div class="code-block-header">
+    <div class="code-block-meta">
+      
+      <span class="code-block-language">html</span>
+    </div>
+    <div class="code-block-actions">
+      <button class="copy-code" type="button" aria-label="Copy">Copy</button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Heading<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span></span></span></code></pre></div>
+</div>
+<p>To define how <em>heading</em> should appear, we define how and where text should appear and $\LaTeX$ does the rest.</p>
+<p>Every academic/research paper you see is written in $\LaTeX$, if it&rsquo;s not, you should stay away from it. It&rsquo;s used to create good looking documents with minimal effort. For example to get, $$\int_0^\pi\sin(x)dx,$$ we just need to type</p>
+<div class="code-block" data-language="tex">
+  <div class="code-block-header">
+    <div class="code-block-meta">
+      
+      <span class="code-block-language">tex</span>
+    </div>
+    <div class="code-block-actions">
+      <button class="copy-code" type="button" aria-label="Copy">Copy</button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="line"><span class="cl"><span class="sb">\[</span><span class="nv">\int</span><span class="nb">_</span><span class="m">0</span><span class="nb">^</span><span class="nv">\pi\sin</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nb">dx</span><span class="s">\]</span></span></span></code></pre></div>
+</div>
+<p>(Markdown with $\KaTeX$ can also render $\LaTeX$, which is why you can see the nice equations here as well. Note that this does not make $\LaTeX$ obsolete, as <code>markdown</code> is shit.)</p>
+<p>But to quickly mention, for inline math, wrap the equation in $, like <code>$x=2$</code>, which generates $x=2$ or $$, like <code>$$x=2$$</code> to get $$x=2.$$</p>
+<h2 id="getting-started-with-it">Getting started with it</h2>
+<p>You have two options.</p>
+<ol>
+<li>Use an online IDE, such as <a href="https://overleaf.com">Overleaf</a></li>
+<li>Download and run it locally</li>
+</ol>
+<h3 id="on-overleaf">On Overleaf</h3>
+<p>Visit <a href="https://overleaf.com">Overleaf</a> and start a new blank project. We can directly start writing on the <code>main.tex</code> file, and see it&rsquo;s final output on the left PDF after compilation.</p>
+<h3 id="locally">Locally</h3>
+<p>To run $\LaTeX$ locally, we need to download it. The simplest way is to use <a href="https://www.tug.org/texlive/">Tex Live</a>. Follow the install instructions as per your operating system. (Note that the entire $\TeX$ package costs about 9 gigs, you can choose a smaller subset.)</p>
+<p>After installation, you could get any $\TeX$ editor, visit <a href="https://en.wikipedia.org/wiki/Comparison_of_TeX_editors">Wikipedia&rsquo;s list of TeX editors</a> to choose one, I&rsquo;d recommend <a href="https://www.texstudio.org/">TeXstudio</a>.</p>
+<p>If you&rsquo;d like to us Visual Studio Code (which I prefer), get the <a href="https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop">LaTeX Workshop</a> extension. You could also configure neovim with the <a href="https://github.com/lervag/vimtex">VimTeX</a> extension if you like.</p>
+<p>Now, create any file ending with <code>.tex</code>, and use the <code>pdflatex</code> executable/binary to compile this $\TeX$ file into a PDF. The final command would be</p>
+<div class="code-block" data-language="sh">
+  <div class="code-block-header">
+    <div class="code-block-meta">
+      
+      <span class="code-block-language">sh</span>
+    </div>
+    <div class="code-block-actions">
+      <button class="copy-code" type="button" aria-label="Copy">Copy</button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pdflatex main.tex</span></span></code></pre></div>
+</div>
+<p>Assuming you named your file <code>main.tex</code>. Note that every editor does this itself, so you need not worry about these commands.</p>
+<p><img src="images/WhatsApp%20Image%202025-10-05%20at%2016.51.32_577eeaa5.jpg" alt="ms-word-best-practices" loading="lazy" decoding="async">
+</p>
+<h2 id="latex">$\LaTeX$</h2>
+<p>Let&rsquo;s finally talk about it. The minimum you need to write to get started with any document is</p>
+<div class="code-block" data-language="tex">
+  <div class="code-block-header">
+    <div class="code-block-meta">
+      
+      <span class="code-block-language">tex</span>
+    </div>
+    <div class="code-block-actions">
+      <button class="copy-code" type="button" aria-label="Copy">Copy</button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="line"><span class="cl"><span class="k">\documentclass</span><span class="na">[options]</span><span class="nb">{</span>article<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></span><span class="line"><span class="cl">&lt;Everything goes inside here&gt;
+</span></span><span class="line"><span class="cl"><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span></span></span></code></pre></div>
+</div>
+<p>Where the <code>documentclass</code> defines how our document looks like. <code>article</code> is the most common, but you could also have <code>book</code>, <code>report</code>, and more (even custom stuff). The <code>options</code> defines some parameters such as font size (default is 10pt), paper size (letterpaper/a4paper), landscape and more.</p>
+<p>The next most important thing is setting up your document title, authors, and date.</p>
+<div class="code-block" data-language="tex">
+  <div class="code-block-header">
+    <div class="code-block-meta">
+      
+      <span class="code-block-language">tex</span>
+    </div>
+    <div class="code-block-actions">
+      <button class="copy-code" type="button" aria-label="Copy">Copy</button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="line"><span class="cl"><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">\title</span><span class="nb">{</span>Intro to <span class="k">\LaTeX</span><span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\author</span><span class="nb">{</span>Taraash<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\date</span><span class="nb">{</span><span class="k">\today</span><span class="nb">}</span> <span class="c">%which is default, so could be omitted.
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\maketitle</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Welcome to some <span class="k">\LaTeX</span>-ed!
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span></span></span></code></pre></div>
+</div>
+<p>Use the <code>maketitle</code> command inside the <code>document</code> environment, and define your title, author, and date as shown above. Use the percent symbol (<code>%</code>) for comments.</p>
+<h3 id="document-structure">Document structure</h3>
+<p>We have <code>\section{}</code>, <code>\subsection{}</code> and <code>\subsubsection{}</code> to organize. Note that there are also starred version of these commands, like <code>\section*{}</code>, these do not number whatever section you have. <code>\\</code> is the line break. <code>\newpage</code> moves everything below to a new page.</p>
+<p>Use the <code>\tableofcontents</code> to&hellip; get a table of contents. Starred ((sub)sub)sections are hidden.</p>
+<h3 id="text">Text</h3>
+<table>
+	<thead>
+			<tr>
+					<th>Command</th>
+					<th>Output</th>
+					<th>Effect</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>\textbf{text}</td>
+					<td>$\textbf{text}$</td>
+					<td>Boldface</td>
+			</tr>
+			<tr>
+					<td>\textit{text}</td>
+					<td>$\textit{text}$</td>
+					<td>Italics</td>
+			</tr>
+			<tr>
+					<td>\textrm{text}</td>
+					<td>$\textrm{text}$</td>
+					<td>Roman family</td>
+			</tr>
+			<tr>
+					<td>\texttt{text}</td>
+					<td>$\texttt{text}$</td>
+					<td>Typewriter</td>
+			</tr>
+			<tr>
+					<td>\emph{text}</td>
+					<td>$\emph{text}$</td>
+					<td>Emphasize</td>
+			</tr>
+			<tr>
+					<td>\textit{text \emph{emph}}</td>
+					<td>$\textit{text \emph{emph}}$</td>
+					<td>Changes depending where it is</td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="math-mode">Math mode</h3>
+<p>Probably the most useful thing $\TeX$ is known for, its ability to handle extremely complex mathematical equations beautifully. Consider for example $$\int_0^{\int_0^1e^{-x^2}}e^{x^2}dx.$$ You would have incredible trouble getting something like this any other package, but in here, we just need <code>\int_0^{\int_0^1e^{-x^2}}e^{x^2}dx</code> to do it!</p>
+<p>I&rsquo;ve already described inline (use <code>$math$</code> or <code>\(math\)</code>) and display math mode (use <code>\[math\]</code> or the <code>equation</code> environment). By an <em>environment</em>  we mean</p>
+<div class="code-block" data-language="tex">
+  <div class="code-block-header">
+    <div class="code-block-meta">
+      
+      <span class="code-block-language">tex</span>
+    </div>
+    <div class="code-block-actions">
+      <button class="copy-code" type="button" aria-label="Copy">Copy</button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="line"><span class="cl"><span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
+</span></span><span class="line"><span class="cl">&lt;stuff here&gt;
+</span></span><span class="line"><span class="cl"><span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span></span></span></code></pre></div>
+</div>
+<p>Hence <code>document</code> is also an environment, stuff inside which get&rsquo;s displayed in the compiled PDF. (Much like the <code>body</code> tag in HTML, everything before the <code>\begin{document}</code>, the <em>preamble</em> is the <code>head</code> tag.)</p>
+<ol>
+<li>Subscripts: <code>a_1</code> = $a_1$, <code>a_12</code> = $a_12$, <code>a_{12}</code> = $a_{12}$</li>
+<li>Superscripts: <code>x^2</code> = $x^2$, <code>x^2y</code> = $x^2y$, <code>x^{2y}</code> = $x^{2y}$</li>
+<li>Fractions: <code>\frac{x}{y}</code> = $\frac{x}{y}$</li>
+<li>Square roots: <code>\sqrt[n]{x}</code> = $\sqrt[n]{x}$</li>
+<li>Sum: <code>\sum_{k=0}^{\infty}a_k</code> = $\sum_{k=0}^{\infty}a_k$</li>
+<li>Product: <code>\prod_{k=0}^{\infty}a_k</code> = $\prod_{k=0}^{\infty}a_k$</li>
+<li>Integral: <code>\int a_k</code> = $\int a_k$</li>
+</ol>
+<p>Some commonly used symbols</p>
+<table>
+	<thead>
+			<tr>
+					<th>Symbol</th>
+					<th>Command</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>$\leq$</td>
+					<td>\leq</td>
+			</tr>
+			<tr>
+					<td>$\neq$</td>
+					<td>\neq</td>
+			</tr>
+			<tr>
+					<td>$\times$</td>
+					<td>\times</td>
+			</tr>
+			<tr>
+					<td>$\wedge$</td>
+					<td>\wedge</td>
+			</tr>
+			<tr>
+					<td>$\in$</td>
+					<td>\in</td>
+			</tr>
+			<tr>
+					<td>$\notin$</td>
+					<td>\notin</td>
+			</tr>
+			<tr>
+					<td>$\forall$</td>
+					<td>\forall</td>
+			</tr>
+			<tr>
+					<td>$\exists$</td>
+					<td>\exists</td>
+			</tr>
+			<tr>
+					<td>$\subset$</td>
+					<td>\subset</td>
+			</tr>
+			<tr>
+					<td>$\rightarrow$</td>
+					<td>\rightarrow</td>
+			</tr>
+			<tr>
+					<td>$\pm$</td>
+					<td>\pm</td>
+			</tr>
+			<tr>
+					<td>$\cdots$</td>
+					<td>\cdots</td>
+			</tr>
+	</tbody>
+</table>
+<p>You can find tables for these online. If you&rsquo;re using the LaTeX Workshop extension in VS Code, find the Symbols panel it provides. Overleaf premium also has one, but you could just search up what you need.</p>
+<h3 id="more-environments">More environments</h3>
+<p><img src="images/WhatsApp%20Image%202025-10-05%20at%2016.58.17_90e7b816.jpg" alt="meme-3" loading="lazy" decoding="async">
+</p>
+<p>Ordered lists</p>
+<div class="code-block" data-language="tex">
+  <div class="code-block-header">
+    <div class="code-block-meta">
+      
+      <span class="code-block-language">tex</span>
+    </div>
+    <div class="code-block-actions">
+      <button class="copy-code" type="button" aria-label="Copy">Copy</button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="line"><span class="cl"><span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\item</span> First
+</span></span><span class="line"><span class="cl"><span class="k">\item</span> Second
+</span></span><span class="line"><span class="cl"><span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span></span></span></code></pre></div>
+</div>
+<p>Unordered lists</p>
+<div class="code-block" data-language="tex">
+  <div class="code-block-header">
+    <div class="code-block-meta">
+      
+      <span class="code-block-language">tex</span>
+    </div>
+    <div class="code-block-actions">
+      <button class="copy-code" type="button" aria-label="Copy">Copy</button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="line"><span class="cl"><span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\item</span> Banana
+</span></span><span class="line"><span class="cl"><span class="k">\item</span> Monkey
+</span></span><span class="line"><span class="cl"><span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span></span></span></code></pre></div>
+</div>
+<p>Description</p>
+<div class="code-block" data-language="tex">
+  <div class="code-block-header">
+    <div class="code-block-meta">
+      
+      <span class="code-block-language">tex</span>
+    </div>
+    <div class="code-block-actions">
+      <button class="copy-code" type="button" aria-label="Copy">Copy</button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="line"><span class="cl"><span class="k">\begin</span><span class="nb">{</span>description<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\iten</span><span class="na">[Banana]</span> Eaten by monkeys
+</span></span><span class="line"><span class="cl"><span class="k">\item</span><span class="na">[Monkeys]</span> Eat banana
+</span></span><span class="line"><span class="cl"><span class="k">\item</span><span class="na">[Humans]</span> Evolved from monkeys, similar to bananas (<span class="s">$</span><span class="nv">\sim</span><span class="nb"> </span><span class="m">99</span><span class="nv">\%</span><span class="s">$</span> DNA match?)
+</span></span><span class="line"><span class="cl"><span class="k">\end</span><span class="nb">{</span>description<span class="nb">}</span></span></span></code></pre></div>
+</div>
+<p>Table</p>
+<div class="code-block" data-language="tex">
+  <div class="code-block-header">
+    <div class="code-block-meta">
+      
+      <span class="code-block-language">tex</span>
+    </div>
+    <div class="code-block-actions">
+      <button class="copy-code" type="button" aria-label="Copy">Copy</button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="line"><span class="cl"><span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>|l|c|r|<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\hline</span>
+</span></span><span class="line"><span class="cl">left<span class="nb">_</span>aligned <span class="nb">&amp;</span> center<span class="nb">_</span>aligned <span class="nb">&amp;</span> right<span class="nb">_</span>aligned <span class="k">\\</span>
+</span></span><span class="line"><span class="cl">second <span class="nb">&amp;</span> row <span class="nb">&amp;</span> data <span class="k">\\</span>
+</span></span><span class="line"><span class="cl"><span class="k">\hline</span> <span class="c">%horizontal line
+</span></span></span><span class="line"><span class="cl"><span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span></span></span></code></pre></div>
+</div>
+<p>Align</p>
+<div class="code-block" data-language="tex">
+  <div class="code-block-header">
+    <div class="code-block-meta">
+      
+      <span class="code-block-language">tex</span>
+    </div>
+    <div class="code-block-actions">
+      <button class="copy-code" type="button" aria-label="Copy">Copy</button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="line"><span class="cl"><span class="k">\begin</span><span class="nb">{</span>align*<span class="nb">}</span>
+</span></span><span class="line"><span class="cl">x + 2 <span class="nb">&amp;</span>= 7 <span class="k">\\</span>
+</span></span><span class="line"><span class="cl">x <span class="nb">&amp;</span>= 5
+</span></span><span class="line"><span class="cl"><span class="k">\end</span><span class="nb">{</span>align*<span class="nb">}</span></span></span></code></pre></div>
+</div>
+<p>$$
+\begin{align*}
+x + 2 &amp;= 7 \
+x &amp;= 5
+\end{align*}
+$$</p>
+<p>The &amp; are aligned vertically, here, keeping them before the equals to sign ensures the equals to sign are aligned vertically. Here, starring the environments gets rid of the numbering done by the unstarred environment.</p>
+<p>$$
+\begin{align}
+x + 2 &amp;= 7 \
+x &amp;= 5
+\end{align}
+$$</p>
+<p>Quote</p>
+<div class="code-block" data-language="tex">
+  <div class="code-block-header">
+    <div class="code-block-meta">
+      
+      <span class="code-block-language">tex</span>
+    </div>
+    <div class="code-block-actions">
+      <button class="copy-code" type="button" aria-label="Copy">Copy</button>
+    </div>
+  </div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="line"><span class="cl"><span class="k">\begin</span><span class="nb">{</span>quote<span class="nb">}</span>
+</span></span><span class="line"><span class="cl">We are made of star-stuff.
+</span></span><span class="line"><span class="cl"><span class="k">\hfill</span> <span class="k">\textit</span><span class="nb">{</span>---Carl Sagan<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\end</span><span class="nb">{</span>quote<span class="nb">}</span></span></span></code></pre></div>
+</div>
+<p>To get quotes, you need `hello&rsquo; ($\text{<code>hello'}$) and \</code>`hello&rsquo;&rsquo; for double ($\text{``hello&quot;}$). DO NOT USE <code>&quot;baaad&quot;</code> ($\text{&ldquo;baaad&rdquo;}$)!</p>
+<h3 id="spacing">Spacing</h3>
+<ul>
+<li><code>hspace{10pt}</code>: Adds a horizontal space of 10pt</li>
+<li><code>vspace{10pt}</code>: Vertical space of 10pt</li>
+<li><code>vfill</code>: Adds space to vertically fill the page</li>
+<li><code>hfill</code>: Adds space to horizontally fill the page</li>
+<li><code>newpage</code>: Creates a new page</li>
+<li><code>\\[10pt]</code>: Adds a new line and a vertical space of 10pt</li>
+</ul>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes">Overleaf&rsquo;s $\LaTeX$ in 30 minutes</a></li>
+<li><a href="https://github.com/T-Cent/Notes-for-Unreal-Engine">The $\TeX$ for my notes for game development with Unreal Engine</a></li>
+<li><a href="https://github.com/T-Cent/evariste">Everything I&rsquo;ve ever made for Évariste</a> (will be continuously updated, make sure to star this repo)</li>
+</ul>
+<p>I&rsquo;d be very happy if, because of this session you were able to use $\LaTeX$, start a discussion on our <a href="">WhatsApp</a>, <a href="">Telegram</a>, or credit/mention/share whatever you made! Thank you.</p></section>
+</div>
+
+
+  
+
+<nav class="paginator" aria-label="Article navigation">
+  
+  
+  <a class="next" href="/blogs/iiitd_and_math/" rel="next">
+    <span>IIITD and math</span>
+    <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+  
+</nav>
+
+
+  
+
+
+</article>
+
+        </div><footer class="footer">
+  <p>&copy; 2026 <a href="http://localhost:1313/">ÉvaristeIIITDihh</a>
+    Powered by
+    <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>
+    <a href="https://github.com/noneback/hugo-theme-spoon" rel="noopener" target="_blank">Spoon</a>
+️  </p>
+</footer>
+<div class="reading-progress" id="reading-progress"></div>
+
+
+<a href="#top" aria-label="Go to top" title="Go to top" class="top-link" id="top-link" accesskey="g">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.5376 22.7916C11.0152 22.7207 22.5795 21.1781 22.0978 10.4211C22.0536 9.43274 21.9303 8.53367 21.7387 7.71865M10.5376 22.7916C16.876 22.3728 20.0969 19.8899 21.5383 16.9142M10.5376 22.7916C9.7707 22.9055 8.97982 22.8964 8.19743 22.7725M21.7387 7.71865C21.4988 6.69828 21.1518 5.80967 20.7188 5.04257M21.7387 7.71865C22.6022 10.1105 23.0542 13.7848 21.5383 16.9142M20.7188 5.04257C17.1684 -1.24629 7.83127 0.632493 4.27577 5.04257C2.88063 6.77451 -0.0433281 11.1668 1.38159 16.6571C2.27481 20.0988 5.17269 22.2936 8.19743 22.7725M20.7188 5.04257C22.0697 6.9404 24.0299 11.3848 22.3541 15.4153M21.5383 16.9142C21.8737 16.4251 22.1428 15.9235 22.3541 15.4153M8.19743 22.7725C12.1971 23.4683 20.6281 22.971 22.3541 15.4153M14 10.945C13.3836 10.289 12.003 8.63215 11.2034 7.04814C11.1703 6.98257 11.0247 6.98456 10.9937 7.05061C10.5221 8.05496 9.07362 9.92941 8 10.945M11.0333 7.44444C10.9392 9.86549 11 15 12 17" stroke="currentColor" stroke-linecap="round"/>
+    </svg>
+</a>
+</main>
+    </body><script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha512-N9IJRoc3LaP3NDoiGkcPa4gG94kapGpaA5Zq9/Dr04uf5TbLFU5q0o8AbRhLKUUlp8QFS2u7S+Yti0U7QtuZvQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="/main.min.ade2e4fbd285906f818d13c084f492ef94af39b04cf303b0f5fccb1489b8ed213efdfb7a8cb7d0c8c5870dfdb8d31184607b6fc876a619756cbb73f25cc73a02.js" integrity="sha512-reLk&#43;9KFkG&#43;BjRPAhPSS75SvObBM8wOw9fzLFIm47SE&#43;/ft6jLfQyMWHDf240xGEYHtvyHamGXVsu3PyXMc6Ag==" crossorigin="anonymous" defer></script>
+</html>
